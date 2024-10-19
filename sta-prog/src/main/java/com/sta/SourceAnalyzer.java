@@ -1,16 +1,10 @@
 package com.sta;
 
 import java.io.*;
-
-
-import java.lang.Runtime;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-
 import org.eclipse.jgit.api.Git;
 
 public class SourceAnalyzer 
@@ -25,9 +19,7 @@ public class SourceAnalyzer
     private String localPath = "C:\\STA-TESTS\\"+ formattedTimestamp + "\\"  ; // Specify a folder for the cloned repository
     private String outFile = localPath + "STA-RESULTS.txt";
 
-    public SourceAnalyzer(){
 
-    }
 
     public void getSourceCode(String repoUrl){
         this.repoUrl = repoUrl;
@@ -45,13 +37,13 @@ public class SourceAnalyzer
     }
 
     public void analyzeSourceCode(){
-        String command = "C:\\Users\\NALHOUSE\\Desktop\\pmd-bin-7.6.0\\bin\\pmd.bat check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;
+        String command = "pmd check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;
         System.out.println("Analyzing...");
         try {
             // Create the process builder
-            ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+            ProcessBuilder processBuilder = new ProcessBuilder();
             processBuilder.redirectErrorStream(true); // Redirect error stream to output stream
-
+            processBuilder.command("cmd.exe", "/c", command);
             // Start the process
             Process process = processBuilder.start();
             
