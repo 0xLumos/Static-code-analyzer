@@ -7,7 +7,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
     <!-- CLI: mvn clean compile exec:java -->
-        <exec.mainClass>com.sta.SourceAnalyzer</exec.mainClass>
+        <exec.mainClass>com.sta.Main</exec.mainClass>
 </properties>
 <build>
     <plugins> 
