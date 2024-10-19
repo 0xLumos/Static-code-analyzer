@@ -6,24 +6,30 @@ import java.io.*;
 import java.lang.Runtime;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.eclipse.jgit.api.Git;
 
 public class SourceAnalyzer 
 {
     private String repoUrl;
-    private String localPath = "C:\\STA-TESTS\\HexMatrix"; // Specify a folder for the cloned repository
+
+    private Instant timestamp = Instant.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+    ZonedDateTime zdt = timestamp.atZone(ZoneId.systemDefault());
+    String formattedTimestamp = zdt.format(formatter);
+
+    private String localPath = "C:\\STA-TESTS\\"+ formattedTimestamp + "\\"  ; // Specify a folder for the cloned repository
+    private String outFile = localPath + "STA-RESULTS.txt";
 
     public SourceAnalyzer(){
 
     }
 
     public void getSourceCode(String repoUrl){
-        
-  
-
-        
-
         this.repoUrl = repoUrl;
 
         try {
@@ -39,7 +45,8 @@ public class SourceAnalyzer
     }
 
     public void analyzeSourceCode(){
-        String command = "C:\\Users\\NALHOUSE\\Desktop\\pmd-bin-7.6.0\\bin\\pmd.bat check -R pmd-rulesets.xml -d . " + localPath;
+        String command = "C:\\Users\\NALHOUSE\\Desktop\\pmd-bin-7.6.0\\bin\\pmd.bat check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;
+        System.out.println("Analyzing...");
         try {
             // Create the process builder
             ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
@@ -68,6 +75,10 @@ public class SourceAnalyzer
 
     public String getLocalPath(){
         return localPath;
+    }
+
+    public String getOutFile(){
+        return outFile;
     }
     
     public static void main( String[] args )
