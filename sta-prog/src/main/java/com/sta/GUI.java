@@ -20,7 +20,7 @@ class GUI implements Reportable {
 
     public GUI(SourceAnalyzer sourceLocation) {
         // Create the Frame
-        JFrame jframe = new JFrame("Chat Screen");
+        JFrame jframe = new JFrame("STA Tool");
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setSize(400, 400);
 
@@ -55,9 +55,11 @@ class GUI implements Reportable {
                 String url = textField.getText();
                 if (!url.isEmpty()) {
                         if (url.contains("https://github.com")) {
+                                
                                 textArea.append("Fetching... \n");
                                 sourceLocation.getSourceCode(url);
                                 textArea.append("Fetching Complete  \n");
+                    
                                 textArea.append("Analyzing...  \n");
                                 sourceLocation.analyzeSourceCode();
                                 try {
@@ -66,6 +68,7 @@ class GUI implements Reportable {
                                     while (myReader.hasNextLine()) {
                                         String data = myReader.nextLine();
                                         textArea.append(data + "\n");
+                                        url = "";
                                     }
                                     myReader.close();
                                     } catch (FileNotFoundException error) {
@@ -90,7 +93,7 @@ class GUI implements Reportable {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textField.setText(""); // Clear the text field
-                textArea.setText("STA"); // Reset the text area
+                textArea.setText(""); // Reset the text area
             }
         });
 
@@ -111,9 +114,9 @@ class GUI implements Reportable {
         return "";
     }
 
-    // Uncomment to run the GUI directly
+
     // public static void main(String[] args) {
-    //     SourceAnalyzer sourceAnalyzer = new SourceAnalyzer(); // Example usage
+    //     SourceAnalyzer sourceAnalyzer = new SourceAnalyzer();
     //     GUI gui = new GUI(sourceAnalyzer);
     // }
 }
