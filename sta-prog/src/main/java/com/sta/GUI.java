@@ -50,7 +50,7 @@ class GUI implements Reportable {
         // Create the panel at bottom and add label, textArea and buttons
         JPanel panel = new JPanel(); // This panel is not visible in output
         JLabel label = new JLabel("Github URL: ");
-        JTextField textField = new JTextField(15); // Accepts up to 15 characters
+        JTextField textField = new JTextField(30); // Accepts up to 30 characters
         JButton btn_send = new JButton("Fetch & Analyze");
         JButton btn_reset = new JButton("Reset");
         
