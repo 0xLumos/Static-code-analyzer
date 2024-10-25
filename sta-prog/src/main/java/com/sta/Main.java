@@ -1,4 +1,4 @@
-package com.sta;
+package com.sat;
 
 public class Main {
 
