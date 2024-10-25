@@ -24,7 +24,7 @@ public class SourceAnalyzer
 
         try {
             Instant timestamp = Instant.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSS");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ssSS");
             ZonedDateTime zdt = timestamp.atZone(ZoneId.systemDefault());
             String formattedTimestamp = zdt.format(formatter);
         
