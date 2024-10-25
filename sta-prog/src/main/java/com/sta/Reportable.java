@@ -1,4 +1,4 @@
-package com.sta;
+package com.sat;
 
 interface Reportable {
     // The reportable interface is used to print details of a class implemnting it
