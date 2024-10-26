@@ -10,15 +10,17 @@ import java.time.format.DateTimeFormatter;
 
 import org.eclipse.jgit.api.Git;
 
-public class SourceAnalyzer 
+public class SourceAnalyzer
+/*This class fetches a github repository and saves it locally 
+It uses the Git API to clone the given Link to the repo
+It also analyzes the cloned repository using PMD tool*/
 {
-    private String repoUrl;
-
-    private String localPath;
-    private String outFile;
-
+    private String repoUrl;        // Remote Repository URL
+    private String localPath;        // Local path to the repo
+    private String outFile;        // Path to the results file
 
 
+    // This method creates a local path, named by the date of creation, then pulls a public github repository to the folder
     public void getSourceCode(String repoUrl){
         this.repoUrl = repoUrl;
 
@@ -44,8 +46,10 @@ public class SourceAnalyzer
         }
     }
 
+    // This method analyses the locally-stored git repository, using pmd analysis tool, then save the results to a file
     public void analyzeSourceCode(){
-        String command = "pmd check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;
+    
+        String command = "pmd check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;        // The command that's going to be based to the process builder
         System.out.println("Analyzing...");
         System.out.println(command);
         try {
