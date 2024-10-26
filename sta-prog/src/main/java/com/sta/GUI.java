@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 
 class GUI implements Reportable {
 
+
     public GUI(SourceAnalyzer sourceLocation) {
         // Create the Frame
         JFrame jframe = new JFrame("STA Tool");
