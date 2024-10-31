@@ -29,6 +29,8 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyledDocument;
 
 class GUI {
+    /* This class is responsible for initalizing the GUI, it takes a parameter of type SourceAnalyzer,
+    and display data such as local and remote repo paths, results file path, etc..*/
 
     public GUI(SourceAnalyzer sourceLocation) {
         // Create the Frame
