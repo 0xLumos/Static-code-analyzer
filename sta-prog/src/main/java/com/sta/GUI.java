@@ -28,7 +28,7 @@ import javax.swing.SwingWorker;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyledDocument;
 
-class GUI implements Reportable {
+class GUI {
 
     public GUI(SourceAnalyzer sourceLocation) {
         // Create the Frame
@@ -164,10 +164,7 @@ class GUI implements Reportable {
         jframe.setVisible(true);
     }
 
-    @Override
-    public String generateReport() {
-        return "";
-    }
+
 
     private String printWelcomeMessage() {
         StringBuilder string = new StringBuilder();
