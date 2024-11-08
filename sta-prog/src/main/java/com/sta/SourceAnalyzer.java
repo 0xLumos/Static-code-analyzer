@@ -13,7 +13,8 @@ import org.eclipse.jgit.api.Git;
 public class SourceAnalyzer{
         /*This class fetches a github repository and saves it locally 
         It uses the Git API to clone the given Link to the repo
-        It also analyzes the cloned repository using PMD tool*/
+        It also analyzes the cloned repository using PMD tool
+        It saves the results in a file that's going to be opened by the GUI*/
 
         private String repoUrl;        // Github Remote Repository URL
         private String localPath;        // Local path to the repo
@@ -23,7 +24,7 @@ public class SourceAnalyzer{
         /* This method creates a local path, named by the date of creation, 
         then pulls a public github repository to a local folder, the local path is stored and passed to the analyser
         The name of the folder is a timestamp of when a repo gets cloned*/ 
-        public void getSourceCode(String repoUrl){
+        public Git getSourceCode(String repoUrl){
             this.repoUrl = repoUrl;    
 
             // This try-catch statement will attempt to get an instance of time, clone the desired repository, and save the file locally
@@ -47,9 +48,12 @@ public class SourceAnalyzer{
             } catch (Exception e) {
                 System.err.println("Cloning failed: " + e.getMessage());
             }
+            return null;
         }
 
-        /* This method  */
+        /* This method runs PMD on the cloned repo, and saves the results file inside that local clone
+         * It seperates the input and pass it to the CMD
+          */
         public void analyzeSourceCode(){
             String command = "pmd check -R pmd-rulesets.xml -d " + localPath + " -r " + outFile;
             System.out.println("Analyzing...");
@@ -88,11 +92,5 @@ public class SourceAnalyzer{
             return outFile;
         }
         
-        // public static void main( String[] args )
-        // {   
-        //     SourceAnalyzer app = new SourceAnalyzer();
-        //     app.analyzeSourceCode();
-        //     app.getSourceCode("https://github.com/0xlumos/HexMatrix.git");
-            
-        // }
+
 }
