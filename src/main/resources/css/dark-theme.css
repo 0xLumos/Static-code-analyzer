@@ -1,0 +1,108 @@
+/* Static Code Analyzer - Dark Theme */
+
+* {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    --border-color: #334155;
+    --accent-primary: #6366F1;
+    --accent-primary-light: rgba(99, 102, 241, 0.15);
+
+    --card-bg: #1E293B;
+    --card-border: #334155;
+
+    --input-bg: #1E293B;
+    --input-border: #475569;
+
+    --btn-secondary-bg: #334155;
+    --btn-secondary-hover: #475569;
+
+    --table-header-bg: #1E293B;
+    --table-row-bg: transparent;
+    --table-row-alt-bg: rgba(255, 255, 255, 0.02);
+    --table-border: #334155;
+
+    --progress-track: #334155;
+
+    --error-bg: rgba(220, 38, 38, 0.1);
+    --error-text: #EF4444;
+
+    --tooltip-bg: #1E293B;
+    --tooltip-text: #F1F5F9;
+
+    --scrollbar-thumb: #475569;
+    --scrollbar-thumb-hover: #64748B;
+}
+
+/* Override chart colors for dark theme */
+.chart-pie-label {
+    -fx-fill: #F1F5F9;
+}
+
+.chart-legend-item-symbol {
+    -fx-background-radius: 4;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #94A3B8;
+}
+
+.axis {
+    -fx-tick-label-fill: #94A3B8;
+}
+
+.axis-label {
+    -fx-text-fill: #94A3B8;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #334155;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* Severity colors for pie chart */
+.data0.chart-pie {
+    -fx-pie-color: #DC2626;
+}
+
+.data1.chart-pie {
+    -fx-pie-color: #EA580C;
+}
+
+.data2.chart-pie {
+    -fx-pie-color: #CA8A04;
+}
+
+.data3.chart-pie {
+    -fx-pie-color: #2563EB;
+}
+
+.data4.chart-pie {
+    -fx-pie-color: #6B7280;
+}
+
+/* Progress indicator */
+.progress-indicator .indicator {
+    -fx-border-color: #6366F1;
+}
+
+/* Hyperlinks */
+.hyperlink {
+    -fx-text-fill: #818CF8;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: #A78BFA;
+}
+
+/* Text fields placeholder */
+.text-field {
+    -fx-prompt-text-fill: #64748B;
+}

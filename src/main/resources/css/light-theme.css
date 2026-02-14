@@ -1,0 +1,98 @@
+/* Static Code Analyzer - Light Theme */
+
+* {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+
+    --border-color: #E2E8F0;
+    --accent-primary: #6366F1;
+    --accent-primary-light: rgba(99, 102, 241, 0.1);
+
+    --card-bg: #FFFFFF;
+    --card-border: #E2E8F0;
+
+    --input-bg: #FFFFFF;
+    --input-border: #CBD5E1;
+
+    --btn-secondary-bg: #F1F5F9;
+    --btn-secondary-hover: #E2E8F0;
+
+    --table-header-bg: #F8FAFC;
+    --table-row-bg: transparent;
+    --table-row-alt-bg: #F8FAFC;
+    --table-border: #E2E8F0;
+
+    --progress-track: #E2E8F0;
+
+    --error-bg: rgba(220, 38, 38, 0.05);
+    --error-text: #DC2626;
+
+    --tooltip-bg: #1E293B;
+    --tooltip-text: #F1F5F9;
+
+    --scrollbar-thumb: #CBD5E1;
+    --scrollbar-thumb-hover: #94A3B8;
+}
+
+/* Override chart colors for light theme */
+.chart-pie-label {
+    -fx-fill: #0F172A;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #475569;
+}
+
+.axis {
+    -fx-tick-label-fill: #475569;
+}
+
+.axis-label {
+    -fx-text-fill: #475569;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #E2E8F0;
+}
+
+.chart-plot-background {
+    -fx-background-color: #FFFFFF;
+}
+
+/* Severity colors for pie chart */
+.data0.chart-pie {
+    -fx-pie-color: #DC2626;
+}
+
+.data1.chart-pie {
+    -fx-pie-color: #EA580C;
+}
+
+.data2.chart-pie {
+    -fx-pie-color: #FBBF24;
+}
+
+.data3.chart-pie {
+    -fx-pie-color: #3B82F6;
+}
+
+.data4.chart-pie {
+    -fx-pie-color: #9CA3AF;
+}
+
+/* Box shadows visible on light theme */
+.summary-card {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 12, 0, 0, 4);
+}
+
+.quick-start-card {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0, 0, 3);
+}
+
+.quick-start-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.15), 16, 0, 0, 6);
+}

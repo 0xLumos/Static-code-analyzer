@@ -1,0 +1,404 @@
+/* Static Code Analyzer - Main Stylesheet */
+
+/* Reset and Base Styles */
+* {
+    -fx-font-family: 'Segoe UI', 'Inter', 'SF Pro Display', system-ui, sans-serif;
+}
+
+/* Root Container */
+.root-container {
+    -fx-background-color: var(--bg-primary);
+}
+
+/* Header */
+.header {
+    -fx-background-color: var(--bg-secondary);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.app-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.app-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: var(--text-secondary);
+}
+
+/* Source Input */
+.source-input {
+    -fx-background-color: var(--input-bg);
+    -fx-border-color: var(--input-border);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+    -fx-text-fill: var(--text-primary);
+    -fx-prompt-text-fill: var(--text-muted);
+}
+
+.source-input:focused {
+    -fx-border-color: var(--accent-primary);
+    -fx-effect: dropshadow(gaussian, var(--accent-primary), 6, 0.3, 0, 0);
+}
+
+/* Buttons */
+.btn {
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);
+}
+
+.btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 6, 0, 0, 2);
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #6366F1, #4F46E5);
+    -fx-text-fill: white;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #818CF8, #6366F1);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #4338CA;
+}
+
+.btn-secondary {
+    -fx-background-color: var(--btn-secondary-bg);
+    -fx-text-fill: var(--text-primary);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 1;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: var(--btn-secondary-hover);
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: var(--bg-secondary);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: var(--text-secondary);
+}
+
+.version-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: var(--text-muted);
+}
+
+.analysis-progress {
+    -fx-accent: var(--accent-primary);
+}
+
+/* Dashboard */
+.dashboard {
+    -fx-background-color: var(--bg-primary);
+}
+
+.results-container {
+    -fx-background-color: var(--bg-primary);
+}
+
+.content-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.content-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Welcome Screen */
+.welcome-container {
+    -fx-background-color: transparent;
+}
+
+.welcome-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.welcome-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: var(--text-secondary);
+    -fx-text-alignment: center;
+}
+
+/* Quick Start Cards */
+.quick-start-card {
+    -fx-background-color: var(--card-bg);
+    -fx-background-radius: 12;
+    -fx-border-color: var(--card-border);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.quick-start-card:hover {
+    -fx-border-color: var(--accent-primary);
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.2), 12, 0, 0, 4);
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.card-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: var(--text-secondary);
+    -fx-text-alignment: center;
+}
+
+/* Summary Cards */
+.summary-card {
+    -fx-background-color: var(--card-bg);
+    -fx-background-radius: 16;
+    -fx-border-color: var(--card-border);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3);
+}
+
+.card-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.grade-label {
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+}
+
+.score-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: 600;
+    -fx-text-fill: var(--text-primary);
+}
+
+.score-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: var(--text-secondary);
+}
+
+.score-bar {
+    -fx-accent: var(--accent-primary);
+    -fx-pref-height: 8;
+    -fx-background-radius: 4;
+}
+
+.score-bar .track {
+    -fx-background-color: var(--progress-track);
+    -fx-background-radius: 4;
+}
+
+.score-bar .bar {
+    -fx-background-color: linear-gradient(to right, #10B981, #34D399);
+    -fx-background-radius: 4;
+}
+
+/* Stats */
+.stat-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: var(--text-secondary);
+}
+
+.stat-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.severity-count {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Charts */
+.chart-container {
+    -fx-background-color: var(--card-bg);
+    -fx-background-radius: 16;
+    -fx-border-color: var(--card-border);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+}
+
+.chart-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+.severity-pie-chart {
+    -fx-pie-label-visible: false;
+    -fx-legend-side: right;
+}
+
+.severity-pie-chart .chart-legend {
+    -fx-background-color: transparent;
+}
+
+.rules-bar-chart {
+    -fx-bar-fill: var(--accent-primary);
+    -fx-horizontal-grid-lines-visible: true;
+    -fx-vertical-grid-lines-visible: false;
+}
+
+.rules-bar-chart .chart-bar {
+    -fx-background-color: linear-gradient(to top, #6366F1, #818CF8);
+    -fx-background-radius: 4 4 0 0;
+}
+
+/* Issues Section */
+.issues-section {
+    -fx-background-color: var(--card-bg);
+    -fx-background-radius: 16;
+    -fx-border-color: var(--card-border);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-primary);
+}
+
+/* Issues Table */
+.issues-table {
+    -fx-background-color: transparent;
+    -fx-border-color: var(--border-color);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.issues-table .column-header {
+    -fx-background-color: var(--table-header-bg);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 0 0 1 0;
+}
+
+.issues-table .column-header-background {
+    -fx-background-color: var(--table-header-bg);
+}
+
+.issues-table .column-header .label {
+    -fx-text-fill: var(--text-primary);
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+}
+
+.issues-table .table-row-cell {
+    -fx-background-color: var(--table-row-bg);
+    -fx-border-color: transparent transparent var(--table-border) transparent;
+}
+
+.issues-table .table-row-cell:odd {
+    -fx-background-color: var(--table-row-alt-bg);
+}
+
+.issues-table .table-row-cell:selected {
+    -fx-background-color: var(--accent-primary-light);
+}
+
+.issues-table .table-cell {
+    -fx-text-fill: var(--text-primary);
+    -fx-font-size: 12px;
+    -fx-padding: 8 10;
+}
+
+/* Analyzing View */
+.analyzing-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: var(--text-primary);
+}
+
+.tip-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: var(--text-secondary);
+}
+
+/* Error View */
+.error-container {
+    -fx-background-color: var(--error-bg);
+    -fx-background-radius: 16;
+}
+
+.error-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--error-text);
+}
+
+.error-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: var(--text-secondary);
+    -fx-text-alignment: center;
+}
+
+/* Combo Box */
+.combo-box {
+    -fx-background-color: var(--input-bg);
+    -fx-border-color: var(--input-border);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: var(--text-primary);
+}
+
+/* Tooltips */
+.tooltip {
+    -fx-background-color: var(--tooltip-bg);
+    -fx-text-fill: var(--tooltip-text);
+    -fx-font-size: 12px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 6;
+}
+
+/* Scroll Bars */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: var(--scrollbar-thumb);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: var(--scrollbar-thumb-hover);
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
